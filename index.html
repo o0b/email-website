@@ -8,7 +8,7 @@
   </noscript>
   <script>
     const fpPromise = import('./CO9FNW64zxrYPsHzNuH5.js')
-      .then(FingerprintJS => FingerprintJS.load())
+      .then(FingerprintJS => FingerprintJS.load({apiKey: "CO9FNW64zxrYPsHzNuH5", endpoint: "https://metrics.qed.mx"}))
 
     fpPromise
       .then(fp => fp.get())
