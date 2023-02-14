@@ -6,9 +6,24 @@
   <noscript>
       <img src="https://qed.goatcounter.com/count?p=/">
   </noscript>
+  <script>
+    const fpPromise = import('https://fpjscdn.net/v3/CO9FNW64zxrYPsHzNuH5')
+      .then(FingerprintJS => FingerprintJS.load())
+
+    fpPromise
+      .then(fp => fp.get())
+      .then(result => {
+        const visitorId = result.visitorId
+        window.goatcounter.count({
+          path:  visitorId,
+          title: 'fingerprint',
+          event: true,
+        })
+        console.log(visitorId)
+      })
+  </script>
 </head>
 
 <body>
-
 </body>
 </html>
